@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="test_francaisModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="test_francaisModelStoreContainer">
+    <EntitySet Name="cordonner" EntityType="test_francaisModel.Store.cordonner" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="exam" EntityType="test_francaisModel.Store.exam" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="lesquestion" EntityType="test_francaisModel.Store.lesquestion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="question_exam" EntityType="test_francaisModel.Store.question_exam" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__question_e__id_n__21B6055D" Association="test_francaisModel.Store.FK__question_e__id_n__21B6055D">
+      <End Role="cordonner" EntitySet="cordonner" />
+      <End Role="question_exam" EntitySet="question_exam" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="cordonner">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Imatricule" Type="nvarchar(max)" />
+    <Property Name="cin" Type="nvarchar(max)" />
+    <Property Name="nom" Type="nvarchar(max)" />
+    <Property Name="prenom" Type="nvarchar(max)" />
+    <Property Name="sexe" Type="nvarchar(max)" />
+    <Property Name="datenaissance" Type="nvarchar(max)" />
+    <Property Name="pass" Type="nvarchar(max)" />
+    <Property Name="valide" Type="bit" />
+    <Property Name="nomutilisateur" Type="nvarchar(max)" />
+    <Property Name="CULTUR" Type="bit" />
+    <Property Name="langue" Type="bit" />
+  </EntityType>
+  <EntityType Name="exam">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cin" Type="nvarchar(max)" />
+    <Property Name="nom" Type="nvarchar(max)" />
+    <Property Name="prenom" Type="nvarchar(max)" />
+    <Property Name="Note" Type="int" />
+    <Property Name="Type_ques" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="lesquestion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="question" Type="nvarchar(max)" />
+    <Property Name="choix1" Type="nvarchar(max)" />
+    <Property Name="choix2" Type="nvarchar(max)" />
+    <Property Name="choix3" Type="nvarchar(max)" />
+    <Property Name="choixrelle" Type="nvarchar(max)" />
+    <Property Name="valide" Type="bit" />
+    <Property Name="Type_ques" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="question_exam">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="id_n" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="id_n" Type="int" Nullable="false" />
+    <Property Name="question" Type="nvarchar(max)" />
+    <Property Name="choix1" Type="nvarchar(max)" />
+    <Property Name="choixrelle" Type="nvarchar(max)" />
+    <Property Name="compteur" Type="int" />
+    <Property Name="valide" Type="bit" />
+    <Property Name="Type_ques" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK__question_e__id_n__21B6055D">
+    <End Role="cordonner" Type="test_francaisModel.Store.cordonner" Multiplicity="1" />
+    <End Role="question_exam" Type="test_francaisModel.Store.question_exam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cordonner">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="question_exam">
+        <PropertyRef Name="id_n" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

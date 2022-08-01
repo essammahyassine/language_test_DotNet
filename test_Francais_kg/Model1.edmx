@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="test_francaisModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="test_francaisModelStoreContainer">
+          <EntitySet Name="cordonner" EntityType="test_francaisModel.Store.cordonner" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="exam" EntityType="test_francaisModel.Store.exam" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="lesquestion" EntityType="test_francaisModel.Store.lesquestion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="question_exam" EntityType="test_francaisModel.Store.question_exam" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK__question_e__id_n__21B6055D" Association="test_francaisModel.Store.FK__question_e__id_n__21B6055D">
+            <End Role="cordonner" EntitySet="cordonner" />
+            <End Role="question_exam" EntitySet="question_exam" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="cordonner">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Imatricule" Type="nvarchar(max)" />
+          <Property Name="cin" Type="nvarchar(max)" />
+          <Property Name="nom" Type="nvarchar(max)" />
+          <Property Name="prenom" Type="nvarchar(max)" />
+          <Property Name="sexe" Type="nvarchar(max)" />
+          <Property Name="datenaissance" Type="nvarchar(max)" />
+          <Property Name="pass" Type="nvarchar(max)" />
+          <Property Name="valide" Type="bit" />
+          <Property Name="nomutilisateur" Type="nvarchar(max)" />
+          <Property Name="CULTUR" Type="bit" />
+          <Property Name="langue" Type="bit" />
+        </EntityType>
+        <EntityType Name="exam">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="cin" Type="nvarchar(max)" />
+          <Property Name="nom" Type="nvarchar(max)" />
+          <Property Name="prenom" Type="nvarchar(max)" />
+          <Property Name="Note" Type="int" />
+          <Property Name="Type_ques" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="lesquestion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="question" Type="nvarchar(max)" />
+          <Property Name="choix1" Type="nvarchar(max)" />
+          <Property Name="choix2" Type="nvarchar(max)" />
+          <Property Name="choix3" Type="nvarchar(max)" />
+          <Property Name="choixrelle" Type="nvarchar(max)" />
+          <Property Name="valide" Type="bit" />
+          <Property Name="Type_ques" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="question_exam">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="id_n" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_n" Type="int" Nullable="false" />
+          <Property Name="question" Type="nvarchar(max)" />
+          <Property Name="choix1" Type="nvarchar(max)" />
+          <Property Name="choixrelle" Type="nvarchar(max)" />
+          <Property Name="compteur" Type="int" />
+          <Property Name="valide" Type="bit" />
+          <Property Name="Type_ques" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK__question_e__id_n__21B6055D">
+          <End Role="cordonner" Type="test_francaisModel.Store.cordonner" Multiplicity="1" />
+          <End Role="question_exam" Type="test_francaisModel.Store.question_exam" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cordonner">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="question_exam">
+              <PropertyRef Name="id_n" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="test_francaisModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="test_francaisEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="cordonner" EntityType="test_francaisModel.cordonner" />
+          <EntitySet Name="exam" EntityType="test_francaisModel.exam" />
+          <EntitySet Name="lesquestion" EntityType="test_francaisModel.lesquestion" />
+          <EntitySet Name="question_exam" EntityType="test_francaisModel.question_exam" />
+          <AssociationSet Name="FK__question_e__id_n__21B6055D" Association="test_francaisModel.FK__question_e__id_n__21B6055D">
+            <End Role="cordonner" EntitySet="cordonner" />
+            <End Role="question_exam" EntitySet="question_exam" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="cordonner">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Imatricule" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="cin" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="nom" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="prenom" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="sexe" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="datenaissance" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="pass" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="valide" Type="Boolean" />
+          <Property Name="nomutilisateur" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="question_exam" Relationship="test_francaisModel.FK__question_e__id_n__21B6055D" FromRole="cordonner" ToRole="question_exam" />
+          <Property Type="Boolean" Name="CULTUR" />
+          <Property Type="Boolean" Name="langue" />
+        </EntityType>
+        <EntityType Name="exam">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cin" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="nom" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="prenom" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Note" Type="Int32" />
+          <Property Type="String" Name="Type_ques" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="lesquestion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="question" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="choix1" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="choix2" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="choix3" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="choixrelle" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="valide" />
+          <Property Type="String" Name="Type_ques" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="question_exam">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="id_n" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="id_n" Nullable="false" />
+          <Property Type="String" Name="question" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="choix1" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="choixrelle" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="compteur" />
+          <Property Type="Boolean" Name="valide" />
+          <NavigationProperty Name="cordonner" Relationship="test_francaisModel.FK__question_e__id_n__21B6055D" FromRole="question_exam" ToRole="cordonner" />
+          <Property Type="String" Name="Type_ques" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK__question_e__id_n__21B6055D">
+          <End Type="test_francaisModel.cordonner" Role="cordonner" Multiplicity="1" />
+          <End Type="test_francaisModel.question_exam" Role="question_exam" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cordonner">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="question_exam">
+              <PropertyRef Name="id_n" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="test_francaisModelStoreContainer" CdmEntityContainer="test_francaisEntities">
+          <EntitySetMapping Name="cordonner">
+            <EntityTypeMapping TypeName="test_francaisModel.cordonner">
+              <MappingFragment StoreEntitySet="cordonner">
+                <ScalarProperty Name="langue" ColumnName="langue" />
+                <ScalarProperty Name="CULTUR" ColumnName="CULTUR" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Imatricule" ColumnName="Imatricule" />
+                <ScalarProperty Name="cin" ColumnName="cin" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="prenom" ColumnName="prenom" />
+                <ScalarProperty Name="sexe" ColumnName="sexe" />
+                <ScalarProperty Name="datenaissance" ColumnName="datenaissance" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
+                <ScalarProperty Name="valide" ColumnName="valide" />
+                <ScalarProperty Name="nomutilisateur" ColumnName="nomutilisateur" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="exam">
+            <EntityTypeMapping TypeName="test_francaisModel.exam">
+              <MappingFragment StoreEntitySet="exam">
+                <ScalarProperty Name="Type_ques" ColumnName="Type_ques" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="cin" ColumnName="cin" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="prenom" ColumnName="prenom" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="lesquestion">
+            <EntityTypeMapping TypeName="test_francaisModel.lesquestion">
+              <MappingFragment StoreEntitySet="lesquestion">
+                <ScalarProperty Name="Type_ques" ColumnName="Type_ques" />
+                <ScalarProperty Name="valide" ColumnName="valide" />
+                <ScalarProperty Name="choixrelle" ColumnName="choixrelle" />
+                <ScalarProperty Name="choix3" ColumnName="choix3" />
+                <ScalarProperty Name="choix2" ColumnName="choix2" />
+                <ScalarProperty Name="choix1" ColumnName="choix1" />
+                <ScalarProperty Name="question" ColumnName="question" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="question_exam">
+            <EntityTypeMapping TypeName="test_francaisModel.question_exam">
+              <MappingFragment StoreEntitySet="question_exam">
+                <ScalarProperty Name="Type_ques" ColumnName="Type_ques" />
+                <ScalarProperty Name="valide" ColumnName="valide" />
+                <ScalarProperty Name="compteur" ColumnName="compteur" />
+                <ScalarProperty Name="choixrelle" ColumnName="choixrelle" />
+                <ScalarProperty Name="choix1" ColumnName="choix1" />
+                <ScalarProperty Name="question" ColumnName="question" />
+                <ScalarProperty Name="id_n" ColumnName="id_n" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model1" ZoomLevel="72">
+        <EntityTypeShape EntityType="test_francaisModel.cordonner" Width="1.5" PointX="0.75" PointY="1" Height="3.1340950520833331" IsExpanded="true" />
+        <EntityTypeShape EntityType="test_francaisModel.exam" Width="1.5" PointX="2.75" PointY="4.75" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="test_francaisModel.lesquestion" Width="1.5" PointX="5.375" PointY="0.75" Height="2.3648893229166665" />
+        <EntityTypeShape EntityType="test_francaisModel.question_exam" Width="1.5" PointX="3" PointY="1.25" Height="2.5571907552083317" />
+        <AssociationConnector Association="test_francaisModel.FK__question_e__id_n__21B6055D" >
+          <ConnectorPoint PointX="2.25" PointY="2.5285953776041659" />
+          <ConnectorPoint PointX="3" PointY="2.5285953776041659" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

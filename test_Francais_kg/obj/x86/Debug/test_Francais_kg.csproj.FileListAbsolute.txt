@@ -1,0 +1,15 @@
+C:\Users\Admin\Documents\Visual Studio 2010\Projects\test_Francais_kg\test_Francais_kg\obj\x86\Debug\test_Francais_kg.FormCordoner.resources
+C:\Users\Admin\Documents\Visual Studio 2010\Projects\test_Francais_kg\test_Francais_kg\obj\x86\Debug\test_Francais_kg.FormExamain.resources
+C:\Users\Admin\Documents\Visual Studio 2010\Projects\test_Francais_kg\test_Francais_kg\obj\x86\Debug\test_Francais_kg.FormQuestion.resources
+C:\Users\Admin\Documents\Visual Studio 2010\Projects\test_Francais_kg\test_Francais_kg\obj\x86\Debug\test_Francais_kg.Properties.Resources.resources
+C:\Users\Admin\Documents\Visual Studio 2010\Projects\test_Francais_kg\test_Francais_kg\obj\x86\Debug\test_Francais_kg.csproj.GenerateResource.Cache
+C:\Users\Admin\Documents\Visual Studio 2010\Projects\test_Francais_kg\test_Francais_kg\bin\Debug\test_Francais_kg.exe.config
+C:\Users\Admin\Documents\Visual Studio 2010\Projects\test_Francais_kg\test_Francais_kg\bin\Debug\test_Francais_kg.exe
+C:\Users\Admin\Documents\Visual Studio 2010\Projects\test_Francais_kg\test_Francais_kg\bin\Debug\test_Francais_kg.pdb
+C:\Users\Admin\Documents\Visual Studio 2010\Projects\test_Francais_kg\test_Francais_kg\obj\x86\Debug\test_Francais_kg.exe
+C:\Users\Admin\Documents\Visual Studio 2010\Projects\test_Francais_kg\test_Francais_kg\obj\x86\Debug\test_Francais_kg.pdb
+C:\Users\Admin\Documents\Visual Studio 2010\Projects\test_Francais_kg\test_Francais_kg\obj\x86\Debug\test_Francais_kg.FormIdentifier.resources
+C:\Users\Admin\Documents\Visual Studio 2010\Projects\test_Francais_kg\test_Francais_kg\obj\x86\Debug\test_Francais_kg.FormMenu.resources
+C:\Users\Admin\Documents\Visual Studio 2010\Projects\test_Francais_kg\test_Francais_kg\obj\x86\Debug\test_Francais_kg.FormMenuExam.resources
+C:\Users\Admin\Documents\Visual Studio 2010\Projects\test_Francais_kg\test_Francais_kg\obj\x86\Debug\test_Francais_kg.FormResultat.resources
+C:\Users\Admin\Documents\Visual Studio 2010\Projects\test_Francais_kg\test_Francais_kg\obj\x86\Debug\test_Francais_kg.csprojResolveAssemblyReference.cache

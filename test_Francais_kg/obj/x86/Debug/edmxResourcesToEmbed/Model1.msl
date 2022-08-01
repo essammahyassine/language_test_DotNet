@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="test_francaisModelStoreContainer" CdmEntityContainer="test_francaisEntities">
+    <EntitySetMapping Name="cordonner">
+      <EntityTypeMapping TypeName="test_francaisModel.cordonner">
+        <MappingFragment StoreEntitySet="cordonner">
+          <ScalarProperty Name="langue" ColumnName="langue" />
+          <ScalarProperty Name="CULTUR" ColumnName="CULTUR" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Imatricule" ColumnName="Imatricule" />
+          <ScalarProperty Name="cin" ColumnName="cin" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+          <ScalarProperty Name="sexe" ColumnName="sexe" />
+          <ScalarProperty Name="datenaissance" ColumnName="datenaissance" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="valide" ColumnName="valide" />
+          <ScalarProperty Name="nomutilisateur" ColumnName="nomutilisateur" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="exam">
+      <EntityTypeMapping TypeName="test_francaisModel.exam">
+        <MappingFragment StoreEntitySet="exam">
+          <ScalarProperty Name="Type_ques" ColumnName="Type_ques" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="cin" ColumnName="cin" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lesquestion">
+      <EntityTypeMapping TypeName="test_francaisModel.lesquestion">
+        <MappingFragment StoreEntitySet="lesquestion">
+          <ScalarProperty Name="Type_ques" ColumnName="Type_ques" />
+          <ScalarProperty Name="valide" ColumnName="valide" />
+          <ScalarProperty Name="choixrelle" ColumnName="choixrelle" />
+          <ScalarProperty Name="choix3" ColumnName="choix3" />
+          <ScalarProperty Name="choix2" ColumnName="choix2" />
+          <ScalarProperty Name="choix1" ColumnName="choix1" />
+          <ScalarProperty Name="question" ColumnName="question" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="question_exam">
+      <EntityTypeMapping TypeName="test_francaisModel.question_exam">
+        <MappingFragment StoreEntitySet="question_exam">
+          <ScalarProperty Name="Type_ques" ColumnName="Type_ques" />
+          <ScalarProperty Name="valide" ColumnName="valide" />
+          <ScalarProperty Name="compteur" ColumnName="compteur" />
+          <ScalarProperty Name="choixrelle" ColumnName="choixrelle" />
+          <ScalarProperty Name="choix1" ColumnName="choix1" />
+          <ScalarProperty Name="question" ColumnName="question" />
+          <ScalarProperty Name="id_n" ColumnName="id_n" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
